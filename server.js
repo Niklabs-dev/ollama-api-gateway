@@ -142,7 +142,7 @@ app.post("/api/chat/stream", authenticate, async (req, res) => {
 });
 
 // Manejo de rutas no encontradas
-app.use("*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({ error: "Endpoint no encontrado" });
 });
 
